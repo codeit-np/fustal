@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Authuser;
 use App\Http\Controllers\Api\BookingControllerApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,4 +21,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('booking',BookingControllerApi::class);
+Route::post('login',[Authuser::class,'login']);
+Route::post('register',[Authuser::class,'register']);
+
+Route::group(['middleware' => ['auth:sanctum']],function(){
+    Route::post('logout',[Authuser::class,'logout']);
+    Route::resource('booking',BookingControllerApi::class);
+
+});
