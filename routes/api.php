@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Authuser;
 use App\Http\Controllers\Api\BookingControllerApi;
+use App\Http\Controllers\Api\EventsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -24,7 +25,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login',[Authuser::class,'login']);
 Route::post('register',[Authuser::class,'register']);
 
-Route::group(['middleware' => ['auth:sanctum']],function(){
-    Route::post('logout',[Authuser::class,'logout']);
-    Route::resource('booking',BookingControllerApi::class);
-});
+// Route::group(['middleware' => ['auth:sanctum']],function(){
+   
+// });
+
+Route::post('logout',[Authuser::class,'logout']);
+Route::resource('booking',BookingControllerApi::class);
+Route::resource('events',EventsController::class);

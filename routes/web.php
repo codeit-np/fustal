@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\EventsController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Auth;
