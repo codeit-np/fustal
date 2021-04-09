@@ -13,19 +13,20 @@ class Authuser extends Controller
 {
     public function register(Request $request)
     {
+        
         $validator = Validator::make($request->all(),[
             'name' => 'required',
             'team' => 'required',
             'mobile' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'is_admin' => 'required'
         ]);
 
         if($validator->fails()){
             return response()->json([
-                'status_code' => 400,
                 'message' => 'Bad Request'
-            ]);
+            ],400);
         }
 
         $user = new User();
@@ -34,11 +35,12 @@ class Authuser extends Controller
         $user->mobile = $request->mobile;
         $user->email = $request->email;
         $user->password = Hash::make($request->name);
+        $user->is_admin = $request->is_admin;
         $user->save();
         return response()->json([
-            'status_code' => 200,
+            
             'message' => 'user created'
-        ]);
+        ],200);
     }
 
     public function login(Request $request)
@@ -48,28 +50,27 @@ class Authuser extends Controller
             'password' => 'required',
         ]);
             
+    
         
         if($validator->fails()){
             return response()->json([
-                
                 'message' => 'Bad Request'
             ],400);
         }
 
-        $credintal = request(['email','password']);
-        if(!Auth::attempt($credintal)){
-            return response()->json([
-                
-                'message' => 'unauthorized'
-            ],500);
-        }
+       
+
+
+        $credential = request(['email','password']);
+
+        
 
         $user = User::where('email',$request->email)->first();
         
         $tokenResult = $user->createToken('authToken')->plainTextToken;
 
         return response()->json([
-            
+            'message' => 'success',
             'token' => $tokenResult
         ],200);
 
@@ -79,8 +80,8 @@ class Authuser extends Controller
     {
         $request->user()->currentAccessToken()->delete();
         return response()->json([
-            'status_code' => 200,
+            
             'message' => 'Token Deleted'
-        ]);
+        ],200);
     }
 }
