@@ -27,5 +27,4 @@ Route::post('register',[Authuser::class,'register']);
 Route::group(['middleware' => ['auth:sanctum']],function(){
     Route::post('logout',[Authuser::class,'logout']);
     Route::resource('booking',BookingControllerApi::class);
-
 });
