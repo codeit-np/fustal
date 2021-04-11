@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\EventsController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\OfferController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('booking',BookingController::class);
 Route::resource('fustalevents',EventController::class);
+Route::resource('offers',OfferController::class);

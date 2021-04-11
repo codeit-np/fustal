@@ -183,7 +183,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <a href="/booking" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-calendar-minus"></i>
               <p>
                 Booking
               </p>
@@ -192,7 +192,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-chart-line"></i>
               <p>
                 Challange Box
               </p>
@@ -201,9 +201,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <a href="/fustalevents" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Events
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/offers" class="nav-link">
+              <i class="nav-icon fas fa-tags"></i>
+              <p>
+                Offer
               </p>
             </a>
           </li>
@@ -212,6 +221,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a class="nav-link"  href="{{ route('logout') }}"
             onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
+        <i class="nav-icon fas fa-sign-out-alt"></i>
              {{ __('Logout') }}
          </a>
 
