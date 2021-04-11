@@ -17,11 +17,11 @@
 
                             <div class="form-group">
                                 <label for="time">time</label>
-                                <input id="time" class="form-control" type="date" name="time">
+                                <input id="time" class="form-control" type="date" name="text">
                             </div>
                             <div class="form-group">
                                 <label for="price">Price</label>
-                                <input id="price" class="form-control" type="date" name="price">
+                                <input id="price" class="form-control" type="date" name="number">
                             </div>
 
                             <button type="submit" class="btn btn-primary btn btn-sm">Save Record</button>

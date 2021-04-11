@@ -18,11 +18,11 @@
 
                             <div class="form-group">
                                 <label for="time">time</label>
-                                <input id="time" class="form-control" type="date" name="time" value="{{ $offer->time }}">
+                                <input id="time" class="form-control" type="date" name="text" value="{{ $offer->time }}">
                             </div>
                             <div class="form-group">
                                 <label for="price">Price</label>
-                                <input id="price" class="form-control" type="date" name="price" value="{{ $offer->price }}">
+                                <input id="price" class="form-control" type="date" name="number" value="{{ $offer->price }}">
                             </div>
 
                             <button type="submit" class="btn btn-primary btn btn-sm">Save Record</button>
