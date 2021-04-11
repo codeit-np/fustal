@@ -29,7 +29,7 @@
                             <label for="team" class="col-md-4 col-form-label text-md-right">{{ __('Team Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="team" type="text" class="form-control @error('team') is-invalid @enderror" name="team" value="{{ old('team') }}" required autocomplete="team" autofocus>
+                                <input id="team" type="text" class="form-control @error('team') is-invalid @enderror" name="team" value="{{ old('team') }}"  autocomplete="team" autofocus>
 
                                 @error('team')
                                     <span class="invalid-feedback" role="alert">
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
+                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Account Type') }}</label>
 
                             <div class="col-md-6">
                                 <select name="is_admin" class="form-control" id="">
