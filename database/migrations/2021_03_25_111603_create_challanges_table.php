@@ -17,7 +17,6 @@ class CreateChallangesTable extends Migration
             $table->id();
             $table->foreignId('challange_from');
             $table->foreignId('challange_to');
-            $table->date('date');
             $table->boolean('is_accept')->default(false);
             $table->timestamps();
         });
