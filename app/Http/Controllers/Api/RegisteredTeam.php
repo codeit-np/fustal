@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Player;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,8 @@ class RegisteredTeam extends Controller
      */
     public function show($id)
     {
-        //
+        $players = Player::where('user_id',$id)->get();
+        return response()->json($players);
     }
 
     /**

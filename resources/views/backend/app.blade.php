@@ -200,6 +200,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
 
           <li class="nav-item">
+            <a href="/teamplayers" class="nav-link">
+              <i class="nav-icon fas fa-calendar-minus"></i>
+              <p>
+                Players
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="/fustalevents" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>

@@ -17,8 +17,7 @@ class CreatePlayersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('position');
-            $table->string('address')->nullable();
-            $table->string('photo')->nullable();
+            $table->string('image')->nullable();
             $table->foreignId('user_id');
             $table->timestamps();
         });
