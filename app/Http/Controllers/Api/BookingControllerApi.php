@@ -27,7 +27,15 @@ class BookingControllerApi extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $booking = new Booking();
+        $booking->date = $request->date;
+        $booking->time = $request->time;
+        $booking->user_id = $request->user()->id;
+        $booking->save();
+
+        return response()->json([
+            'message' => 'success'
+        ],201);
     }
 
     /**
